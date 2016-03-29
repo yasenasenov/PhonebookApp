@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Phonebook</title>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/jquery.noty.packaged.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/ajaxRequester.js"></script>
+    <script src="scripts/userSession.js"></script>
+    <script src="scripts/app.js"></script>
+
+</head>
+
+<body>
+	<header id="header">Phonebook<span></span></header>
+
+	<!-- Left sidebar menu -->
+	<ul id="menu">
+		<li><a href="#" class="link" id="homeBtn">Home</a></li>
+		<li><a href="#" class="link" id="phonebookBtn">Phonebook</a></li>
+		<li><a href="#" class="link" id="addPhoneBtn">Add Phone</a></li>
+		<li><a href="#" class="link" id="editProfileBtn">Edit Profile</a></li>
+		<li><a href="#" class="link" id="logoutBtn">Logout</a></li>
+	</ul>
+	
+	<!-- Main screen placeholder -->
+	<main id="wrapper">
+        <!-- Welcome screen -->
+        <div id="homeView">
+            <div class="dialog-box">
+                <h1>Welcome</h1>
+                <a href="#" class="button" id="btnShowLoginView">Login</a>
+                <a href="#" class="button" id="btnShowRegisterView">Register</a>
+            </div>
+        </div>
+
+        <br/>
+        <div id="registerView">
+            <!-- Registration screen -->
+            <div id="register-form" class="dialog-box">
+                <h1>Register</h1>
+                <p>
+                    <label for="username">Username:</label>
+                    <input type="text" id="txtRegisterUsername" />
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" id="txtRegisterPassword" />
+                </p>
+                <p>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" />
+                </p>
+                <p class="buttons">
+                    <a href="#" class="button" id="btnRegister">Register</a>
+                    <a href="#" class="link" id="btnRegisterLogin">Login</a>
+                </p>
+            </div>
+        </div>
+
+
+        <br/>
+        <div id="loginView">
+            <!-- Login screen -->
+            <div id="login-form" class="dialog-box">
+                <h1>Login</h1>
+                <p>
+                    <label for="username">Username:</label>
+                    <input type="text" id="txtLoginUsername" />
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" id="txtLoginPassword" />
+                </p>
+                <p class="buttons">
+                    <a href="#" class="button" id="btnLoginLogin">Login</a>
+                    <a href="#" class="link" id="btnLoginRegister">Register</a>
+                <p>
+            </div>
+        </div>
+
+
+        <!--<br/>-->
+
+        <!-- User home screen -->
+        <div id="userHomeView">
+            <div class="dialog-box" id="userHomeDiv">
+                <h1></h1>
+                <p>Please use the navigation menu on the left.</p>
+            </div>
+        </div>
+
+        <!-- Phonebook screen -->
+        <div id="phonebookView">
+            <table id="phones">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p><a href="#" class="button" id="addPhoneBtnInside">Add Phone</a></p>
+        </div>
+
+        <!-- Add phone screen -->
+        <div id="add-phone-form" class="dialog-box">
+            <h1>Add Phone</h1>
+            <p>
+                <label for="personName">Name:</label>
+                <input type="text" id="personName">
+            </p>
+            <p>
+                <label for="phoneNumber">Number:</label>
+                <input type="text" id="phoneNumber">
+            </p>
+            <p class="buttons">
+                <a href="#" class="button" id="addNewPhoneBtn">Add</a>
+                <a href="#" class="button" id="cancel">Cancel</a>
+            </p>
+        </div>
+
+        <!-- Edit phone screen -->
+        <div id="edit-phone-form" class="dialog-box">
+            <h1>Edit Phone</h1>
+            <p>
+                <label for="personName">Name:</label>
+                <input type="text" id="editPersonName">
+            </p>
+            <p>
+                <label for="phoneNumber">Number:</label>
+                <input type="text" id="editPhoneNumber">
+            </p>
+            <p class="buttons">
+                <a href="#" class="button" id="editBtn">Edit</a>
+                <a href="#" class="button">Cancel</a>
+            </p>
+        </div>
+
+
+        <!-- Delete phone screen -->
+        <div id="delete-phone-form" class="dialog-box">
+            <h1>Confirm Delete Phone?</h1>
+            <p>
+                <label for="personName">Name:</label>
+                <input type="text" id="delNameConfirm"  disabled="disabled">
+            </p>
+            <p>
+                <label for="phoneNumber">Number:</label>
+                <input type="text" id="delNumberConfirm" disabled="disabled">
+            </p>
+            <p class="buttons">
+                <a href="#" class="button" id="delConfirmBtn">Delete</a>
+                <a href="#" class="button" id="cancelConfirmBtn">Cancel</a>
+            </p>
+        </div>
+
+        <!-- Edit user profile screen -->
+        <div id="edit-profile-form" class="dialog-box">
+            <h1>Edit Profile</h1>
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" id="username" value="nakov">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+            </p>
+            <p>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" value="Svetlin Nakov">
+            </p>
+            <p class="buttons">
+                <a href="#" class="button">Edit</a>
+                <a href="#" class="button">Cancel</a>
+            </p>
+        </div>
+	</main>
+	
+	<footer id="footer">&copy; 2015 by Yasen Asenov, No Rights Reserved</footer>
+</body>
+
+</html>
